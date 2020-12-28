@@ -1,3 +1,7 @@
+Phaser3.50 によるライフゲージの実装例
+
+# development environment
+
 Phaser + TypeScript + webpack 環境
 
 - wsl2 ( ubuntu ) 環境で動作
