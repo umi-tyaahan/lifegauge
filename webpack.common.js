@@ -13,12 +13,8 @@ module.exports = {
   // エントリポイント 依存関係整理の起点にするファイル
   entry: buildtarget + 'game.ts',
 
-  output: {
-    // モジュールバンドルを行った結果を出力する場所やファイル名の指定
-    // "__dirname"はこのファイルが存在するディレクトリを表すnode.jsで定義済みの定数
-    path: path.join(__dirname, 'public'),
-    filename: 'js/bundle.js',
-  },
+
+
   // モジュールに適用するルールの設定（ここではローダーの設定を行う事が多い）
   module: {
     rules: [
