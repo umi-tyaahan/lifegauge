@@ -30,7 +30,23 @@ function preload() {
 
 function create() {
   this.add.image(400, 300, 'sky');
-  this.add.image(400, 300, 'akane');
+
+  let img1 = this.add.image(400, 300, 'akane');
+  let img2 = this.add.image(450, 300, 'akane');
+
+  const layer = this.add.layer();
+  layer.add([img1, img2]);
+
+  // const group = this.add.group();
+  // group.createFromConfig({
+  //   classType: Phaser.GameObjects.Image,
+  //   key: 'akane',
+  //   active: true,
+  //   repeat: 4, // 0 is show image count 1
+  //   setXY: { x: 200, y: 350, stepX: 40, stepY: 0 },
+  // });
+
+  // layer.add(group.getChildren());
 
   let lifeContainer = this.add.image(32, 23, 'lifeContainer').setOrigin(0, 0);
   let lifeBar = this.add.image(
@@ -42,11 +58,18 @@ function create() {
   let lifeBarMask = this.add.image(lifeBar.x, lifeBar.y, "lifeBar").setOrigin(0, 0).setVisible(false);
   lifeBar.mask = new Phaser.Display.Masks.BitmapMask(this, lifeBarMask);
 
+  // // this.cameras.main.fade(2000);
 
   let badButton = this.add.image(650, 300, 'bad').setScale(1.5, 1.5).setInteractive();
 
   badButton.on('pointerdown', () => {
-    lifeBarMask.x -= 10;
+    lifeBarMask.x -= 1000;
+
+    this.tweens.add({
+      targets: layer,
+      duration: 2000,
+      alpha: 0
+    });
 
     this.tweens.add({
       targets: badButton,
