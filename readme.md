@@ -19,7 +19,7 @@ yarn install
 yarn start
 ```
 
-chrome などで http://localhost:8000 でデモが動作します。
+chrome などで http://localhost:5000 でデモが動作します。
 
 # Other build command
 

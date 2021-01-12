@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 // ビルド対象を変える場合はここを変更する
 // const buildtarget = './src/boilerplate/';
 // const buildtarget = './src/sandbox/';
-const buildtarget = './src/games/shake/';
+const buildtarget = './src/games/flash/';
 // const buildtarget = './src/games/tutorial/';
 
 module.exports = {
